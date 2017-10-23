@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChaladuraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TClientePedido">
+    <Key>
+      <PropertyRef Name="ClienteId" />
+      <PropertyRef Name="PedidoId" />
+    </Key>
+    <Property Name="ClienteId" Type="smallint" Nullable="false" />
+    <Property Name="PedidoId" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TClientes">
+    <Key>
+      <PropertyRef Name="ClienteId" />
+    </Key>
+    <Property Name="ClienteId" Type="smallint" Nullable="false" />
+    <Property Name="Nombre" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Apellido1" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Apellido2" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Movil" Type="smallint" Nullable="false" />
+    <Property Name="Telefono" Type="smallint" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TipoVia" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Calle" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Numero" Type="smallint" Nullable="false" />
+    <Property Name="Escalera" Type="nchar" MaxLength="5" />
+    <Property Name="Piso" Type="nchar" MaxLength="5" />
+    <Property Name="CP" Type="smallint" Nullable="false" />
+    <Property Name="Localidad" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Provincia" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="NFacebook" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TPedidos">
+    <Key>
+      <PropertyRef Name="PedidoId" />
+    </Key>
+    <Property Name="PedidoId" Type="smallint" Nullable="false" />
+    <Property Name="FechaRecibido" Type="date" Nullable="false" />
+    <Property Name="FechaEnvio" Type="date" Nullable="false" />
+    <Property Name="ListaProductos" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Coste" Type="smallint" Nullable="false" />
+    <Property Name="Pagado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TProveedores">
+    <Key>
+      <PropertyRef Name="ProveedorId" />
+    </Key>
+    <Property Name="ProveedorId" Type="smallint" Nullable="false" />
+    <Property Name="Lista" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Coste" Type="smallint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_TClientePedido_TCliente">
+    <End Role="TClientes" Type="Self.TClientes" Multiplicity="1" />
+    <End Role="TClientePedido" Type="Self.TClientePedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TClientes">
+        <PropertyRef Name="ClienteId" />
+      </Principal>
+      <Dependent Role="TClientePedido">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TClientePedido_TPedidos">
+    <End Role="TPedidos" Type="Self.TPedidos" Multiplicity="1" />
+    <End Role="TClientePedido" Type="Self.TClientePedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TPedidos">
+        <PropertyRef Name="PedidoId" />
+      </Principal>
+      <Dependent Role="TClientePedido">
+        <PropertyRef Name="PedidoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ChaladuraModelStoreContainer">
+    <EntitySet Name="TClientePedido" EntityType="Self.TClientePedido" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TClientes" EntityType="Self.TClientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TPedidos" EntityType="Self.TPedidos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TProveedores" EntityType="Self.TProveedores" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TClientePedido_TCliente" Association="Self.FK_TClientePedido_TCliente">
+      <End Role="TClientes" EntitySet="TClientes" />
+      <End Role="TClientePedido" EntitySet="TClientePedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TClientePedido_TPedidos" Association="Self.FK_TClientePedido_TPedidos">
+      <End Role="TPedidos" EntitySet="TPedidos" />
+      <End Role="TClientePedido" EntitySet="TClientePedido" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

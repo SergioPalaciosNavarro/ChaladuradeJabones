@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChaladuraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TClientes">
+    <Key>
+      <PropertyRef Name="ClienteId" />
+    </Key>
+    <Property Name="ClienteId" Type="Int16" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Apellido1" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Apellido2" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Movil" Type="Int16" Nullable="false" />
+    <Property Name="Telefono" Type="Int16" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TipoVia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Calle" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Numero" Type="Int16" Nullable="false" />
+    <Property Name="Escalera" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+    <Property Name="Piso" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+    <Property Name="CP" Type="Int16" Nullable="false" />
+    <Property Name="Localidad" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Provincia" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="NFacebook" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TPedidos" Relationship="Self.TClientePedido" FromRole="TClientes" ToRole="TPedidos" />
+  </EntityType>
+  <EntityType Name="TPedidos">
+    <Key>
+      <PropertyRef Name="PedidoId" />
+    </Key>
+    <Property Name="PedidoId" Type="Int16" Nullable="false" />
+    <Property Name="FechaRecibido" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaEnvio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ListaProductos" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Coste" Type="Int16" Nullable="false" />
+    <Property Name="Pagado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TClientes" Relationship="Self.TClientePedido" FromRole="TPedidos" ToRole="TClientes" />
+  </EntityType>
+  <EntityType Name="TProveedores">
+    <Key>
+      <PropertyRef Name="ProveedorId" />
+    </Key>
+    <Property Name="ProveedorId" Type="Int16" Nullable="false" />
+    <Property Name="Lista" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Coste" Type="Int16" Nullable="false" />
+  </EntityType>
+  <Association Name="TClientePedido">
+    <End Role="TClientes" Type="Self.TClientes" Multiplicity="*" />
+    <End Role="TPedidos" Type="Self.TPedidos" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ChaladuraEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TClientes" EntityType="Self.TClientes" />
+    <EntitySet Name="TPedidos" EntityType="Self.TPedidos" />
+    <EntitySet Name="TProveedores" EntityType="Self.TProveedores" />
+    <AssociationSet Name="TClientePedido" Association="Self.TClientePedido">
+      <End Role="TClientes" EntitySet="TClientes" />
+      <End Role="TPedidos" EntitySet="TPedidos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

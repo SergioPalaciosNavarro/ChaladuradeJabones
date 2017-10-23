@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChaladuraModelStoreContainer" CdmEntityContainer="ChaladuraEntities">
+    <EntitySetMapping Name="TClientes">
+      <EntityTypeMapping TypeName="ChaladuraModel.TClientes">
+        <MappingFragment StoreEntitySet="TClientes">
+          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="Movil" ColumnName="Movil" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TipoVia" ColumnName="TipoVia" />
+          <ScalarProperty Name="Calle" ColumnName="Calle" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Escalera" ColumnName="Escalera" />
+          <ScalarProperty Name="Piso" ColumnName="Piso" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="NFacebook" ColumnName="NFacebook" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TPedidos">
+      <EntityTypeMapping TypeName="ChaladuraModel.TPedidos">
+        <MappingFragment StoreEntitySet="TPedidos">
+          <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
+          <ScalarProperty Name="FechaRecibido" ColumnName="FechaRecibido" />
+          <ScalarProperty Name="FechaEnvio" ColumnName="FechaEnvio" />
+          <ScalarProperty Name="ListaProductos" ColumnName="ListaProductos" />
+          <ScalarProperty Name="Coste" ColumnName="Coste" />
+          <ScalarProperty Name="Pagado" ColumnName="Pagado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TProveedores">
+      <EntityTypeMapping TypeName="ChaladuraModel.TProveedores">
+        <MappingFragment StoreEntitySet="TProveedores">
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="Lista" ColumnName="Lista" />
+          <ScalarProperty Name="Coste" ColumnName="Coste" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TClientePedido" TypeName="ChaladuraModel.TClientePedido" StoreEntitySet="TClientePedido">
+      <EndProperty Name="TClientes">
+        <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+      </EndProperty>
+      <EndProperty Name="TPedidos">
+        <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
