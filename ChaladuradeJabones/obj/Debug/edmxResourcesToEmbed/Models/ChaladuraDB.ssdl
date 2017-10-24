@@ -12,19 +12,19 @@
     <Key>
       <PropertyRef Name="ClienteId" />
     </Key>
-    <Property Name="ClienteId" Type="smallint" Nullable="false" />
+    <Property Name="ClienteId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="Apellido1" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="Apellido2" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="Movil" Type="smallint" Nullable="false" />
-    <Property Name="Telefono" Type="smallint" Nullable="false" />
+    <Property Name="Movil" Type="int" Nullable="false" />
+    <Property Name="Telefono" Type="int" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="TipoVia" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="Calle" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="Numero" Type="smallint" Nullable="false" />
+    <Property Name="Numero" Type="int" />
+    <Property Name="Portal" Type="int" />
     <Property Name="Escalera" Type="nchar" MaxLength="5" />
     <Property Name="Piso" Type="nchar" MaxLength="5" />
-    <Property Name="CP" Type="smallint" Nullable="false" />
+    <Property Name="CP" Type="int" Nullable="false" />
     <Property Name="Localidad" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="Provincia" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="NFacebook" Type="varchar" MaxLength="50" />

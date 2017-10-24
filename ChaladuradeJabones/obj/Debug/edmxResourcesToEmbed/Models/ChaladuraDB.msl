@@ -1,28 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ChaladuraModelStoreContainer" CdmEntityContainer="ChaladuraEntities">
-    <EntitySetMapping Name="TClientes">
-      <EntityTypeMapping TypeName="ChaladuraModel.TClientes">
-        <MappingFragment StoreEntitySet="TClientes">
-          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
-          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
-          <ScalarProperty Name="Movil" ColumnName="Movil" />
-          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="TipoVia" ColumnName="TipoVia" />
-          <ScalarProperty Name="Calle" ColumnName="Calle" />
-          <ScalarProperty Name="Numero" ColumnName="Numero" />
-          <ScalarProperty Name="Escalera" ColumnName="Escalera" />
-          <ScalarProperty Name="Piso" ColumnName="Piso" />
-          <ScalarProperty Name="CP" ColumnName="CP" />
-          <ScalarProperty Name="Localidad" ColumnName="Localidad" />
-          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-          <ScalarProperty Name="NFacebook" ColumnName="NFacebook" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TPedidos">
       <EntityTypeMapping TypeName="ChaladuraModel.TPedidos">
         <MappingFragment StoreEntitySet="TPedidos">
@@ -44,12 +22,34 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TClientes">
+      <EntityTypeMapping TypeName="ChaladuraModel.TClientes">
+        <MappingFragment StoreEntitySet="TClientes">
+          <ScalarProperty Name="NFacebook" ColumnName="NFacebook" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="Piso" ColumnName="Piso" />
+          <ScalarProperty Name="Escalera" ColumnName="Escalera" />
+          <ScalarProperty Name="Portal" ColumnName="Portal" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Calle" ColumnName="Calle" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Movil" ColumnName="Movil" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="TClientePedido" TypeName="ChaladuraModel.TClientePedido" StoreEntitySet="TClientePedido">
-      <EndProperty Name="TClientes">
-        <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
-      </EndProperty>
       <EndProperty Name="TPedidos">
         <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
+      </EndProperty>
+      <EndProperty Name="TClientes">
+        <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

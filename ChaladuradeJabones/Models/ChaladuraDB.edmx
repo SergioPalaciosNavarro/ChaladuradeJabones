@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ChaladuraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ChaladuraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TClientePedido">
           <Key>
             <PropertyRef Name="ClienteId" />
@@ -17,19 +17,19 @@
           <Key>
             <PropertyRef Name="ClienteId" />
           </Key>
-          <Property Name="ClienteId" Type="smallint" Nullable="false" />
+          <Property Name="ClienteId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="Apellido1" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="Apellido2" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Movil" Type="smallint" Nullable="false" />
-          <Property Name="Telefono" Type="smallint" Nullable="false" />
+          <Property Name="Movil" Type="int" Nullable="false" />
+          <Property Name="Telefono" Type="int" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TipoVia" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Calle" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Numero" Type="smallint" Nullable="false" />
+          <Property Name="Numero" Type="int" />
+          <Property Name="Portal" Type="int" />
           <Property Name="Escalera" Type="nchar" MaxLength="5" />
           <Property Name="Piso" Type="nchar" MaxLength="5" />
-          <Property Name="CP" Type="smallint" Nullable="false" />
+          <Property Name="CP" Type="int" Nullable="false" />
           <Property Name="Localidad" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="Provincia" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="NFacebook" Type="varchar" MaxLength="50" />
@@ -91,33 +91,10 @@
             <End Role="TClientePedido" EntitySet="TClientePedido" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ChaladuraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="TClientes">
-          <Key>
-            <PropertyRef Name="ClienteId" />
-          </Key>
-          <Property Name="ClienteId" Type="Int16" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Apellido1" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Apellido2" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Movil" Type="Int16" Nullable="false" />
-          <Property Name="Telefono" Type="Int16" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TipoVia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Calle" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Numero" Type="Int16" Nullable="false" />
-          <Property Name="Escalera" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
-          <Property Name="Piso" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
-          <Property Name="CP" Type="Int16" Nullable="false" />
-          <Property Name="Localidad" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Provincia" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="NFacebook" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="TPedidos" Relationship="Self.TClientePedido" FromRole="TClientes" ToRole="TPedidos" />
-        </EntityType>
         <EntityType Name="TPedidos">
           <Key>
             <PropertyRef Name="PedidoId" />
@@ -128,7 +105,7 @@
           <Property Name="ListaProductos" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Coste" Type="Int16" Nullable="false" />
           <Property Name="Pagado" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="TClientes" Relationship="Self.TClientePedido" FromRole="TPedidos" ToRole="TClientes" />
+          <NavigationProperty Name="TClientes" Relationship="ChaladuraModel.TClientePedido" FromRole="TPedidos" ToRole="TClientes" />
         </EntityType>
         <EntityType Name="TProveedores">
           <Key>
@@ -138,47 +115,47 @@
           <Property Name="Lista" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Coste" Type="Int16" Nullable="false" />
         </EntityType>
-        <Association Name="TClientePedido">
-          <End Role="TClientes" Type="Self.TClientes" Multiplicity="*" />
-          <End Role="TPedidos" Type="Self.TPedidos" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="ChaladuraEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="TClientes" EntityType="Self.TClientes" />
           <EntitySet Name="TPedidos" EntityType="Self.TPedidos" />
           <EntitySet Name="TProveedores" EntityType="Self.TProveedores" />
-          <AssociationSet Name="TClientePedido" Association="Self.TClientePedido">
+          <EntitySet Name="TClientes" EntityType="ChaladuraModel.TClientes" />
+          <AssociationSet Name="TClientePedido" Association="ChaladuraModel.TClientePedido">
             <End Role="TClientes" EntitySet="TClientes" />
             <End Role="TPedidos" EntitySet="TPedidos" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="TClientes">
+          <Key>
+            <PropertyRef Name="ClienteId" />
+          </Key>
+          <Property Name="ClienteId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Apellido1" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Apellido2" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Movil" Type="Int32" Nullable="false" />
+          <Property Name="Telefono" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Calle" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Numero" Type="Int32" />
+          <Property Name="Portal" Type="Int32" />
+          <Property Name="Escalera" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="Piso" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="CP" Type="Int32" Nullable="false" />
+          <Property Name="Localidad" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Provincia" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="NFacebook" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TPedidos" Relationship="ChaladuraModel.TClientePedido" FromRole="TClientes" ToRole="TPedidos" />
+        </EntityType>
+        <Association Name="TClientePedido">
+          <End Type="ChaladuraModel.TClientes" Role="TClientes" Multiplicity="*" />
+          <End Type="ChaladuraModel.TPedidos" Role="TPedidos" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ChaladuraModelStoreContainer" CdmEntityContainer="ChaladuraEntities">
-          <EntitySetMapping Name="TClientes">
-            <EntityTypeMapping TypeName="ChaladuraModel.TClientes">
-              <MappingFragment StoreEntitySet="TClientes">
-                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
-                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
-                <ScalarProperty Name="Movil" ColumnName="Movil" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="TipoVia" ColumnName="TipoVia" />
-                <ScalarProperty Name="Calle" ColumnName="Calle" />
-                <ScalarProperty Name="Numero" ColumnName="Numero" />
-                <ScalarProperty Name="Escalera" ColumnName="Escalera" />
-                <ScalarProperty Name="Piso" ColumnName="Piso" />
-                <ScalarProperty Name="CP" ColumnName="CP" />
-                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
-                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-                <ScalarProperty Name="NFacebook" ColumnName="NFacebook" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TPedidos">
             <EntityTypeMapping TypeName="ChaladuraModel.TPedidos">
               <MappingFragment StoreEntitySet="TPedidos">
@@ -200,15 +177,37 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TClientes">
+            <EntityTypeMapping TypeName="ChaladuraModel.TClientes">
+              <MappingFragment StoreEntitySet="TClientes">
+                <ScalarProperty Name="NFacebook" ColumnName="NFacebook" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="Piso" ColumnName="Piso" />
+                <ScalarProperty Name="Escalera" ColumnName="Escalera" />
+                <ScalarProperty Name="Portal" ColumnName="Portal" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Calle" ColumnName="Calle" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Movil" ColumnName="Movil" />
+                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <AssociationSetMapping Name="TClientePedido" TypeName="ChaladuraModel.TClientePedido" StoreEntitySet="TClientePedido">
-            <EndProperty Name="TClientes">
-              <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
-            </EndProperty>
             <EndProperty Name="TPedidos">
               <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
             </EndProperty>
+            <EndProperty Name="TClientes">
+              <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+            </EndProperty>
           </AssociationSetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

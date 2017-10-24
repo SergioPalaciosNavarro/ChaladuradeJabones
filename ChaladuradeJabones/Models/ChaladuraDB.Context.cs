@@ -25,8 +25,8 @@ namespace ChaladuradeJabones.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<TClientes> TClientes { get; set; }
         public virtual DbSet<TPedidos> TPedidos { get; set; }
         public virtual DbSet<TProveedores> TProveedores { get; set; }
+        public virtual DbSet<TClientes> TClientes { get; set; }
     }
 }

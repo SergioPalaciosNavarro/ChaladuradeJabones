@@ -24,15 +24,15 @@ namespace ChaladuradeJabones.Models
         public string Nombre { get; set; }
         public string Apellido1 { get; set; }
         public string Apellido2 { get; set; }
-        public short Movil { get; set; }
-        public short Telefono { get; set; }
+        public int Movil { get; set; }
+        public int Telefono { get; set; }
         public string Email { get; set; }
-        public string TipoVia { get; set; }
         public string Calle { get; set; }
-        public short Numero { get; set; }
+        public Nullable<int> Numero { get; set; }
+        public Nullable<int> Portal { get; set; }
         public string Escalera { get; set; }
         public string Piso { get; set; }
-        public short CP { get; set; }
+        public int CP { get; set; }
         public string Localidad { get; set; }
         public string Provincia { get; set; }
         public string NFacebook { get; set; }

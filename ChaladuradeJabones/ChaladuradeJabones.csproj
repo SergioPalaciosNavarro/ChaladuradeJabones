@@ -195,6 +195,8 @@
       <DependentUpon>ChaladuraDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ClientesModel.cs" />
+    <Compile Include="Models\ClientesRepositorio.cs" />
+    <Compile Include="Models\IClientesRepositorio.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\TClientes.cs">
