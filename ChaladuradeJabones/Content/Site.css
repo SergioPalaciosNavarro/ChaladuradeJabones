@@ -11,7 +11,7 @@
 /* HEADER -->> Navigation Bar */
 .navbar-inverse {
     background-color: #fff;
-    border-color: #095751;
+    border-color: #c60064;
 }
 
     .navbar-inverse .navbar-nav > li:hover {
@@ -23,15 +23,15 @@
         }
 
     .navbar-inverse .navbar-nav > li > a {
-        color: #095751;
+        color: #c60064;
     }
 
         .navbar-inverse .navbar-nav > li > a:hover {
-            color: #095751;
+            color: #c60064;
         }
 
         .navbar-inverse .navbar-nav > li > a:visited {
-            color: #095751;
+            color: #c60064;
         }
 
 .navbar-brand, .navbar-nav li a {
@@ -55,7 +55,7 @@
 .navbar-divider {
     width: 2px;
     height: 35px;
-    background-color: #095751;
+    background-color: #c60064;
     margin-top: .6em;
 }
 
@@ -74,13 +74,13 @@
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
     background-color: #98A92A;
-    color: #095751;
+    color: #c60064;
 }
 
 .login-widget li a {
     height: 30px;
     line-height: 30px;
-    color: #095751 !important;
+    color: #c60064 !important;
 }
 
     .login-widget li a span.glyphicon {
@@ -105,21 +105,21 @@
 
 /* FOOTER -->> footer bar */
 footer {
-    background-color: #98A92A;
-    border-top: 1px solid #095751;
+    background-color: #80006e;
+    border-top: 1px solid #c60064;
 }
 
     footer h5 {
         margin-top: 5px;
         margin-bottom: 5px;
-        color: #095751;
+        color: #c60064;
     }
 
         footer h5 strong {
             vertical-align: sub;
         }
 
-.dkv-footer-icon {
+.cdj-footer-icon {
     height: 25px;
     display: inline-block;
 }
@@ -129,7 +129,7 @@ footer {
 .breadcrumb {
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: #095751;
+    background-color: #80006e;
     border-radius: 20px;
 }
 
@@ -153,166 +153,166 @@ footer {
 
 /* MAIN CONTENT FILTER */
 
-.dkv-filter .well {
+.cdj-filter .well {
     margin-bottom: 10px;
     background-color: rgba(152, 169, 42, 0.4);
     border-radius: 5px;
-    border: 1px solid #095751;
+    border: 1px solid #c60064;
 }
 
-.dkv-filter .form-control {
-    border-color: #095751;
-    color: #095751;
+.cdj-filter .form-control {
+    border-color: #c60064;
+    color: #040013;
     border-radius: 20px;
 }
 
-.dkv-filter .input-group .form-control {
+.cdj-filter .input-group .form-control {
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
 }
 
-.dkv-filter .input-group .input-group-addon {
+.cdj-filter .input-group .input-group-addon {
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 }
 
-.dkv-filter .control-label {
-    color: #095751;
+.cdj-filter .control-label {
+    color: #c60064;
 }
 
-.dkv-filter .input-group-addon {
-    border-color: #095751;
-    color: #095751;
+.cdj-filter .input-group-addon {
+    border-color: #c60064;
+    color: #c60064;
 }
 
-.dkv-filter .btn-primary {
-    background-color: #095751;
+.cdj-filter .btn-primary {
+    background-color: #c60064;
     border-radius: 20px;
 }
 
-.dkv-filter .btn-default {
-    border-color: #095751;
-    color: #095751;
+.cdj-filter .btn-default {
+    border-color: #c60064;
+    color: #c60064;
     border-radius: 20px;
 }
 
-.dkv-filter .btn-success {
+.cdj-filter .btn-success {
     background-color: #98A92A;
-    border-color: #095751;
+    border-color: #c60064;
     border-radius: 20px;
 }
 
-.dkv-filter .btn-info {
+.cdj-filter .btn-info {
     background-color: #92a324;
-    border-color: #095751;
-    color: #095751;
+    border-color: #c60064;
+    color: #c60064;
     border-radius: 20px;
 }
 
 /* MAIN CONTENT TABLE */
 
-.dkv-results {
+.cdj-results {
     font-size: initial;
 }
 
-    .dkv-results .dataTables_length > label {
+    .cdj-results .dataTables_length > label {
         font-weight: bold !important;
-        color: #095751;
+        color: #c60064;
     }
 
-        .dkv-results .dataTables_length > label > select {
+        .cdj-results .dataTables_length > label > select {
             font-weight: bold !important;
-            color: #095751;
+            color: #c60064;
             border-radius: 5px;
-            border-color: #095751;
+            border-color: #c60064;
         }
 
-    .dkv-results table > thead > tr.bg-primary {
-        background-color: #095751;
+    .cdj-results table > thead > tr.bg-primary {
+        background-color: #c60064;
     }
 
-    .dkv-results table > tbody > tr td:last-child {
+    .cdj-results table > tbody > tr td:last-child {
         padding: 3px;
     }
 
-    .dkv-results table > tbody > tr.odd:hover {
+    .cdj-results table > tbody > tr.odd:hover {
         background-color: rgba(152, 169, 42, 0.9);
     }
 
-    .dkv-results table > tbody > tr.even:hover {
+    .cdj-results table > tbody > tr.even:hover {
         background-color: rgba(152, 169, 42, 0.9);
     }
 
-    .dkv-results table > tbody > tr.even {
+    .cdj-results table > tbody > tr.even {
         background-color: #fff;
     }
 
-    .dkv-results table > tbody > tr td:last-child > a {
+    .cdj-results table > tbody > tr td:last-child > a {
         text-decoration: none;
         padding: 1px 3px;
     }
 
-        .dkv-results table > tbody > tr td:last-child > a.btn-primary.look {
+        .cdj-results table > tbody > tr td:last-child > a.btn-primary.look {
             background-color: #92a324;
-            border-color: #095751;
+            border-color: #c60064;
         }
 
-        .dkv-results table > tbody > tr td:last-child > a.btn-primary.edit {
-            background-color: #095751;
-            border-color: #095751;
+        .cdj-results table > tbody > tr td:last-child > a.btn-primary.edit {
+            background-color: #c60064;
+            border-color: #c60064;
         }
 
-    .dkv-results table > tbody > tr td:last-child > button {
+    .cdj-results table > tbody > tr td:last-child > button {
         padding: 1px 3px;
     }
 
-        .dkv-results table > tbody > tr td:last-child > button.btn_danger.delete {
+        .cdj-results table > tbody > tr td:last-child > button.btn_danger.delete {
             background-color: #D30B45;
             border-color: #BA122B;
         }
 
-    .dkv-results .dataTables_scrollBody {
+    .cdj-results .dataTables_scrollBody {
         background-color: #948C8D;
     }
 
-    .dkv-results #QuotationTable_wrapper > div:last-child {
+    .cdj-results #QuotationTable_wrapper > div:last-child {
         font-weight: bold !important;
-        color: #095751;
+        color: #c60064;
     }
 
-        .dkv-results #QuotationTable_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li > a {
+        .cdj-results #QuotationTable_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li > a {
             font-weight: bold !important;
-            color: #095751;
-            border-color: #095751;
+            color: #c60064;
+            border-color: #c60064;
         }
 
-        .dkv-results #QuotationTable_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.previous > a {
+        .cdj-results #QuotationTable_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.previous > a {
             border-bottom-left-radius: 20px;
             border-top-left-radius: 20px;
         }
 
-        .dkv-results #QuotationTable_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.next > a {
+        .cdj-results #QuotationTable_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.next > a {
             border-bottom-right-radius: 20px;
             border-top-right-radius: 20px;
         }
     /*test*/
-    .dkv-results #ClienteTable_wrapper > div:last-child {
+    .cdj-results #ClienteTable_wrapper > div:last-child {
         font-weight: bold !important;
-        color: #095751;
+        color: #c60064;
     }
 
-        .dkv-results #ClienteTable_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li > a {
+        .cdj-results #ClienteTable_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li > a {
             font-weight: bold !important;
-            color: #095751;
-            border-color: #095751;
+            color: #c60064;
+            border-color: #c60064;
         }
 
-        .dkv-results #ClienteTable_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.previous > a {
+        .cdj-results #ClienteTable_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.previous > a {
             border-bottom-left-radius: 20px;
             border-top-left-radius: 20px;
         }
 
-        .dkv-results #ClienteTable_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.next > a {
+        .cdj-results #ClienteTable_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.next > a {
             border-bottom-right-radius: 20px;
             border-top-right-radius: 20px;
         }
@@ -321,23 +321,23 @@ footer {
     background-color: #98a92a;
 }
 
-.dkv-results #LiProv_wrapper > div:last-child {
+.cdj-results #LiProv_wrapper > div:last-child {
     font-weight: bold !important;
-    color: #095751;
+    color: #c60064;
 }
 
-    .dkv-results #LiProv_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li > a {
+    .cdj-results #LiProv_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li > a {
         font-weight: bold !important;
-        color: #095751;
-        border-color: #095751;
+        color: #c60064;
+        border-color: #c60064;
     }
 
-    .dkv-results #LiProv_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.previous > a {
+    .cdj-results #LiProv_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.previous > a {
         border-bottom-left-radius: 20px;
         border-top-left-radius: 20px;
     }
 
-    .dkv-results #LiProv_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.next > a {
+    .cdj-results #LiProv_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.next > a {
         border-bottom-right-radius: 20px;
         border-top-right-radius: 20px;
     }
@@ -346,68 +346,68 @@ footer {
     background-color: #98a92a;
 }
 
-.dkv-results #UsuariosTabla_wrapper > div:last-child {
+.cdj-results #UsuariosTabla_wrapper > div:last-child {
     font-weight: bold !important;
-    color: #095751;
+    color: #c60064;
 }
 
-    .dkv-results #UsuariosTabla_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li > a {
+    .cdj-results #UsuariosTabla_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li > a {
         font-weight: bold !important;
-        color: #095751;
-        border-color: #095751;
+        color: #c60064;
+        border-color: #c60064;
     }
 
-    .dkv-results #UsuariosTabla_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.previous > a {
+    .cdj-results #UsuariosTabla_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.previous > a {
         border-bottom-left-radius: 20px;
         border-top-left-radius: 20px;
     }
 
-    .dkv-results #UsuariosTabla_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.next > a {
+    .cdj-results #UsuariosTabla_wrapper > div:last-child > div:last-child .dataTables_paginate ul > li.next > a {
         border-bottom-right-radius: 20px;
         border-top-right-radius: 20px;
     }
 /* MAIN CONTENT DETAIL*/
 
-.dkv-title h3 {
+.cdj-title h3 {
     margin-top: 10px;
-    color: #095751;
+    color: #c60064;
 }
 
-.dkv-title .form-group {
+.cdj-title .form-group {
     margin-top: 8px;
     margin-bottom: 7px;
 }
 
-    .dkv-title .form-group > div {
+    .cdj-title .form-group > div {
         padding-right: 0;
     }
 
-.dkv-title .btn-success {
+.cdj-title .btn-success {
     background-color: #98A92A;
-    border-color: #095751;
+    border-color: #c60064;
     border-radius: 20px;
 }
 
-.dkv-quotation-info .panel-primary {
-    border-color: #095751;
+.cdj-quotation-info .panel-primary {
+    border-color: #c60064;
 }
 
-    .dkv-quotation-info .panel-primary .panel-heading {
-        color: #095751;
+    .cdj-quotation-info .panel-primary .panel-heading {
+        color: #c60064;
         background-color: rgba(152, 169, 42, 0.4);
     }
 
-.dkv-detail .form-control {
-    border-color: #095751;
-    color: #095751;
+.cdj-detail .form-control {
+    border-color: #c60064;
+    color: #c60064;
     border-radius: 20px;
 }
 
-.dkv-detail .input-group .input-group-addon {
+.cdj-detail .input-group .input-group-addon {
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
-    border-color: #095751;
-    color: #095751;
+    border-color: #c60064;
+    color: #c60064;
 }
 /* MAIN CONTENT Zonas*/
 
@@ -431,7 +431,7 @@ footer {
     }
 
 .webgrid-header, .webgrid-header a {
- background-color: #095751;
+ background-color: #c60064;
     color: #ffffff;
     text-align: left;
     text-decoration: none;
@@ -522,4 +522,15 @@ footer {
    -moz-opacity:65;
     opacity:0.65;
     background:#999;
+}
+/*test*/
+.well {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+
+.forminscripcion {
+    padding-left: 35px;
+    padding-right: 35px;
 }

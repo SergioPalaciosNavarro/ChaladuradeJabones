@@ -5,8 +5,153 @@
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ClienteId)
 
+        <div class='well well-small'>
 
-        <div class="form-group">
+            <div class="row forminscripcion">
+
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="name" class="col-sm-4 control-label">Nombre:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClienteNom" name="ClienteNom" class="form-control" placeholder="Nombre" />
+                        <!-- </div> -->
+                    </div>
+
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="apellido1" class="col-sm-4 control-label">Apellido 1:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClienteAp1" name="ClienteAp1" class="form-control" placeholder="Primer apellido" />
+                        <!-- </div> -->
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="apellido2" class="col-sm-4 control-label">Apellido 2:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClienteAp2" name="ClienteAp2" class="form-control" placeholder="Segundo apellido" />
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row forminscripcion">
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="movil" class="col-sm-4 control-label">Móvil:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClienteMov" name="ClienteMov" class="form-control" placeholder="Móvil" />
+                        <!-- </div> -->
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="via" class="col-sm-4 control-label">Tipo de vía:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClienteTlf" name="ClienteTlf" class="form-control" placeholder="Teléfono" />
+
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="calle" class="col-sm-4 control-label">Calle:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClienteCalle" name="ClienteCalle" class="form-control" placeholder="Calle" />
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row forminscripcion">
+
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="numero" class="col-sm-4 control-label">Nº:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClienteNum" name="ClienteNum" class="form-control" placeholder="Número" />
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="escalera" class="col-sm-4 control-label">Escalera:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClientePortal" name="ClientePortal" class="form-control" placeholder="Portal" />
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="piso" class="col-sm-4 control-label">Piso:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClienteEscalera" name="ClienteEscalera" class="form-control" placeholder="Escalera" />
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row forminscripcion">
+
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="cp" class="col-sm-4 control-label">CP:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClientePiso" name="ClientePiso" class="form-control" placeholder="Piso" />
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="localidad" class="col-sm-4 control-label">Localilad:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClienteCP" name="ClienteCP" class="form-control" placeholder="Código Postal" />
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="provincia" class="col-sm-4 control-label">Provincia:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClienteLoc" name="ClienteLoc" class="form-control" placeholder="Localidad" />
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row forminscripcion">
+
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="email" class="col-sm-4 control-label">Email:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClienteProv" name="ClienteProv" class="form-control" placeholder="Provincia" />
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <!-- <label for="FechaNacimiento" class="col-sm-4 control-label">Fecha de nacimiento:</label> -->
+                        <!-- <div class="col-sm-8 col-xs-12"> -->
+                        <input type="text" id="ClienteNFb" name="ClienteNFb" class="form-control" placeholder="Facebook" />
+
+                        <!-- </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        @*<div class="form-group">
 
             <label class="control-label col-lg-12"><i class="glyphicon glyphicon-edit"></i> Nuevo Cliente:</label>
             <div class="col-md-3">
@@ -29,6 +174,6 @@
     <input type="text" id="ClienteProv" name="ClienteProv" class="form-control" placeholder="Provincia" />
     <input type="text" id="ClienteNFb" name="ClienteNFb" class="form-control" placeholder="Facebook" />
 </div>
-        </div>
+        </div>*@
     </div>
 }
